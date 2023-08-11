@@ -20,4 +20,7 @@ int main()
         sum+=a;
     }
     fprintf(outputFile,"%d\n",sum);
+    fclose(inputFile);
+    fclose(outputFile);
+    return 0;
 }
