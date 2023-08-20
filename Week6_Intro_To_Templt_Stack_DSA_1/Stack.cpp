@@ -90,6 +90,58 @@ class StackDynamic:public StackStatic
         delete [] dynamicStack;
     }
 };
+struct node 
+{
+    int data;
+    node *next;
+};
+class StackList
+{
+    node *head;
+    node *tail;
+    public:
+    StackList()
+    {
+        head=NULL;
+        tail=NULL;
+    }
+    void push(int x)
+    {
+        node *newitem;
+        newitem=new node;
+        newitem->data=x;
+        newitem->next=NULL;
+        if(head==NULL)
+        {
+            head=newitem;
+            tail=head;
+        }
+        else
+        {
+            tail->next=newitem;
+            tail=newitem;
+        }
+    }
+    int pop()
+    {
+        if(head==NULL)
+        {
+            return INT_MIN;
+        }
+        node *temp=head;
+        node *prev=NULL;
+        while(temp->next!=NULL)
+        {
+            prev=temp;
+            temp=temp->next;
+        }
+        int popped=temp->data;
+        prev->next=NULL;
+        tail=prev;
+        delete temp;
+        return popped;
+    }
+};
 int main()
 {
     StackStatic s;
@@ -101,7 +153,11 @@ int main()
     d.push(15);
     d.push(10);
     d.push(25);
-    cout<<" Dynamic Stack Elements= "<<d.pop()<<"->"<<d.pop()<<"->"<<d.pop()<<"\n";
-    
+    cout<<"Dynamic Stack Elements= "<<d.pop()<<"->"<<d.pop()<<"->"<<d.pop()<<"\n";
+    StackList l;
+    l.push(17);
+    l.push(18);
+    l.push(19);
+    cout<<"List Stack Elements= "<<l.pop()<<"->"<<l.pop()<<"->"<<l.pop()<<"\n";
     return 0;
 }
