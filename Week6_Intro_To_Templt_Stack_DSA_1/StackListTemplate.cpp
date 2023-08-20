@@ -47,6 +47,10 @@ class StackList//insert first delte first(insert at head delte at head)
         delete temp;
         return popped;
     }
+    ~StackList()
+    {
+        
+    }
 };
 int main()
 {
