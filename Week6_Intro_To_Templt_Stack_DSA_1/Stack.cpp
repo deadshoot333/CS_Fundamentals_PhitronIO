@@ -95,7 +95,7 @@ struct node
     int data;
     node *next;
 };
-class StackList
+class StackList//insert first delte first(insert at head delte at head)
 {
     node *head;
     node *tail;
@@ -118,8 +118,8 @@ class StackList
         }
         else
         {
-            tail->next=newitem;
-            tail=newitem;
+            newitem->next=head;
+            head=newitem;
         }
     }
     int pop()
@@ -129,15 +129,8 @@ class StackList
             return INT_MIN;
         }
         node *temp=head;
-        node *prev=NULL;
-        while(temp->next!=NULL)
-        {
-            prev=temp;
-            temp=temp->next;
-        }
+        head=head->next;
         int popped=temp->data;
-        prev->next=NULL;
-        tail=prev;
         delete temp;
         return popped;
     }
