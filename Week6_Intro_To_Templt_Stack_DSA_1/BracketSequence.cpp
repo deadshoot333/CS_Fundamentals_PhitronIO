@@ -1,43 +1,49 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 int main()
 {
-    stack<char>s;
+    stack<char> s;
     string input;
-    cin>>input;
-    for(int i=0;i<input.size();i++)
+    cin >> input;
+    for (int i = 0; i < input.size(); i++)
     {
-        if(input[i]=='('||input[i]=='{'||input[i]=='[')
+        if (input[i] == '(' || input[i] == '{' || input[i] == '[')
         {
             s.push(input[i]);
         }
-    }
-    if(s.empty())
-    {
-        cout<<"NO\n";
-        return 0;
-    }
-    for(int i=0;i<input.size();i++)
-    {
-        if(input[i]=='}' && s.top()=='{')
+        else
         {
-            s.pop();
+            if (s.empty())
+            {
+                cout << "NO\n";
+                return 0;
+            }
+                if (input[i] == '}' && s.top() == '{')
+                {
+                    s.pop();
+                }
+                else if (input[i] == ')' && s.top() == '(')
+                {
+                    s.pop();
+                }
+                else if (input[i] == ']' && s.top() == '[')
+                {
+                    s.pop();
+                }
+                else
+                {
+                    cout<<"NO\n";
+                    return 0;
+                }
+            }
         }
-        else if(input[i]==')' && s.top()=='(')
-        {
-            s.pop();
-        }
-        else if(input[i]==']' && s.top()=='[')
-        {
-            s.pop();
-        }
-    }
-    if(!s.empty())
-    {
-        cout<<"NO\n";
-    }
-    else
-    {
-        cout<<"YES\n";
-    }
+            if (!s.empty())
+            {
+                cout << "NO\n";
+            }
+            else
+            {
+                cout << "YES\n";
+            }
+
 }
