@@ -21,21 +21,21 @@ class Student:
 
     def Calc_Attendense(self):
         self.Marks_of_Attendence=round(self.Attendense_Class/42*15,2) ## round is needed for precision
-        ##print(self.Marks_of_Attendence)
+        print(f"Marks Attendence = {self.Marks_of_Attendence}")
     
     def Calc_perf(self):
         self.Marks_of_Performance=round((self.Marks_of_MID/30*15-(42-self.Attendense_Class)),2)
         if self.Marks_of_Performance<0:
             self.Marks_of_Performance=0
-        ##print(self.Marks_of_Performance)
+        print(f"Marks Performance= {self.Marks_of_Performance}")
     
     def Calc_best2CT(self):
         sum=0
         for items in self.Marks_of_3CT:
             sum=round(sum+items*1.5,2)
-        min_ct=min(self.Marks_of_3CT)
+        min_ct=min(self.Marks_of_3CT)*1.5
         self.Marks_of_Best2CT=sum-min_ct
-        ##print(self.Marks_of_Best2CT)
+        print(f"Marks Best 2 CT = {self.Marks_of_Best2CT}")
     
     def Calc_Grade(self):
         self.Marks_Total=self.Marks_of_Attendence+self.Marks_of_Best2CT+self.Marks_of_MID+self.Marks_of_Performance+self.Marks_of_Final
