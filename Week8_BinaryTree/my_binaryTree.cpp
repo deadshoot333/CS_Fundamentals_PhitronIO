@@ -13,6 +13,7 @@ class Node
 class BinaryTree
 {
     public:
+    bool found_flag=false;
     Node *root;
     BinaryTree()
     {
@@ -149,14 +150,7 @@ class BinaryTree
         }
         if(a->id==value)
         {
-            if(a->parent==NULL)
-            {
-                cout<<"Item Found and it is the root "<< "Left Child "<<a->left->id<<" Right Child "<<a->right->id<<"\n";    
-            }
-            else
-            {
-                cout<<"Item Found-->Parent is "<<a->parent->id<<" Left Child "<<a->left->id<<" Right Child "<<a->right->id<<"\n";
-            }
+            this->found_flag=true;
             return;    
         }
         Search(value,a->left);
@@ -186,6 +180,14 @@ int main()
     int number;
     cout<<"Enter the number to be searched = ";
     cin>>number;
-    bt.Search(number,bt.root);   
+    bt.Search(number,bt.root);
+    if(!bt.found_flag)
+    {
+        cout<<"Item not found!!!\n";
+    }
+    else
+    {
+        cout<<"Item Found\n";
+    }   
 
 }
