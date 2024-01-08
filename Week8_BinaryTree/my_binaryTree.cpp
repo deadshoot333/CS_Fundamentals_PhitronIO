@@ -160,14 +160,15 @@ class BinaryTree
 int main()
 {
     BinaryTree bt;
+    bt.Insertion(20);
     bt.Insertion(10);
-    bt.Insertion(1);
+    bt.Insertion(22);
+    bt.Insertion(5);
     bt.Insertion(12);
-    bt.Insertion(6);
-    bt.Insertion(7);
-    bt.Insertion(13);
-    bt.Insertion(2);
-    bt.Insertion(4);
+    bt.Insertion(21);
+    bt.Insertion(25);
+    bt.Insertion(3);
+    bt.Insertion(15);
     bt.BFS();
     cout<<"DFS--->\n";
     bt.DFS(bt.root);
