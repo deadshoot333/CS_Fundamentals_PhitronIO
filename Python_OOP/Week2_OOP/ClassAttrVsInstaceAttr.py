@@ -1,6 +1,6 @@
 class Shop:
     cart=[]
-    def __init__(self,buyer):
+    def __init__(self,buyer):  #Here buyer is instance variable
         self.buyer=buyer
     def add_to_cart(self,item):
         self.cart.append(item)

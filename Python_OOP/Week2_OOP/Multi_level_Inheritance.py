@@ -18,7 +18,7 @@ class Student_L4(Student_L1):
 
 ##Main
 
-s1=Student("Arqam","202214011")
-s2=Student_L1("Arqam","202214011",15,18)
-s3=Student_L4("Arqam","202214011",16,17,27)
+s1=Student("Abc","212214011")
+s2=Student_L1("Abc","232214011",15,18)
+s3=Student_L4("Abc","222214011",16,17,27)
 s3.printInfo()
