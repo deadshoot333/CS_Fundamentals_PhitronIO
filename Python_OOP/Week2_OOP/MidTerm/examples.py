@@ -69,3 +69,4 @@ Mustafiz = Cricketer('Mustafiz', 27, 69, 86)
 Riyad = Cricketer('Riyad', 39, 72, 92)
 youngestPlayer=min(Sakib,Mushfiq,Mustafiz,Riyad)
 print(f"The Youngest Player: {youngestPlayer.name}")
+# examples used for mid questions
