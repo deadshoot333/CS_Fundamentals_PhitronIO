@@ -2,3 +2,5 @@
 *.vscode
 *.cph
 *.out
+__pycache__/
+*.py[cod]
