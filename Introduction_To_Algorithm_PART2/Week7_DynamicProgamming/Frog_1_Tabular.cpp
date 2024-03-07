@@ -31,7 +31,7 @@ int32_t main()
     dp[2] = dp[1] + abs(cost[1] - cost[2]);
     for (int i = 3; i <= n; i++)
     {
-        dp[i]=min(dp[i-1]+abs(cost[i-1]-cost[i]),dp[i-2]+abs(cost[i-2]-cost[i]));
+        dp[i] = min(dp[i - 1] + abs(cost[i - 1] - cost[i]), dp[i - 2] + abs(cost[i - 2] - cost[i]));
     }
-    cout<<dp[n]<<" ";
+    cout << dp[n] << " ";
 }
