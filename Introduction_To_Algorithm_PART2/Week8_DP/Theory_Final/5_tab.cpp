@@ -1,3 +1,5 @@
+// theory final answer:  https://docs.google.com/document/d/13Qfl5Z71LYtHbKEpnJv7PzJ5qG11RonAni8AcOA42Nk/edit#heading=h.v4utprbu8rw
+// theory final question:https://docs.google.com/document/d/1wGEtRc2WKblCw7f5sKu6wWFvfeyEPNeZqGi5AA3Hods/edit
 #include <bits/stdc++.h>
 #define int long long
 using namespace std;
